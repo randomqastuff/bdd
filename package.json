@@ -1,0 +1,33 @@
+{
+  "name": "bdd-javascript",
+  "author": "Thomas Nguyen",
+  "email": "thomas.ejob@gmail.com",
+  "description": "Javascript BDD on windows 10",
+  "scripts": {
+    "test-npm": "echo npm is working",
+    "version": "echo VERSION node: && node --version && echo VERSION npm: && npm --version && echo VERSION gulp: && gulp --version && echo VERSION Java: && java -version"
+  },
+  "keywords": [
+    "BDD",
+    "Javascript",
+    "yes4me@hotmail.com",
+    "eslint",
+    "selenium"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yes4me/bdd-javascript.git"
+  },
+  "private": true,
+  "dependencies": {
+    "firefox-profile": "^1.0.0",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "eslint": "^3.19.0",
+    "mocha": "^3.3.0",
+    "mysql": "^2.13.0"
+  }
+}

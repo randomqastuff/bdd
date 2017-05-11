@@ -163,7 +163,7 @@ node_modules
 
 
 ### PRIVATE INFORMATION ###
+#*.json
 *.env
-*.json
 *.sql
 *.sqlite
