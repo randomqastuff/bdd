@@ -1,0 +1,42 @@
+{
+  "extends": "airbnb",
+
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+
+  "ecmaFeatures": {
+    "modules": true
+  },
+
+  "globals": {
+    "browser": true,
+    "by": true,
+    "element": true,
+    "expect": true,
+    "isAngularSite": false
+  },
+
+  "plugins": [
+    "react"
+  ],
+
+  "rules": {
+    "comma-dangle": [0, "always-multiline"],    // enforces consistent use of trailing commas in object and array literals
+    "default-case": 1,							// require default case in switch statements (off by default)
+    "func-names": 0,							// require function expressions to have a name (off by default)
+    "key-spacing": ["error", { "align": "colon", "beforeColon": true, "afterColon": true}],
+    "new-cap": ["error", {"capIsNewExceptions": ["this.And", "this.Given", "this.Then", "this.When", "cucumber.Cli"]}],
+    "no-console": 0,							// allow use of console = 0/off (default)
+    "no-multi-spaces": 0,					 	// disallow use of multiple spaces
+    "no-trailing-spaces": 1,      				// disallow trailing whitespace at the end of lines
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "no-unused-expressions": 0,					// disallow usage of expressions in statement position
+    "no-unused-vars": 1,						// disallow declaration of variables that are not used in the code
+    "one-var": [2, "always"],                   // allow just one var statement per function (off by default)
+    "padded-blocks": ["error", "never"],   	    // enforce padding within blocks (off by default)
+    "strict": ["error", "global"]			    // all code is in strict mode
+  }
+}
