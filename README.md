@@ -58,12 +58,15 @@ This document will show you how to:
 3. install and setup npm
     * install [npm](https://nodejs.org/en/download/)
     * All the dependencies are managed by npm
-        * To install all required modules listed in the ./package.json file, run: `npm install`
-        * To update all required modules listed in the ./package.json file, run: `npm update`
-    * For help: npm help [command]
-4. install the following packages globally (because of Windows)
+        * install all required modules listed in the ./package.json file, run: `npm install`
+        * update all required modules listed in the ./package.json file, run: `npm update`
+              * For help: npm help [command]
+          4. install the following packages globally (because of Windows)
 
-    DANGER: Install the package in this order!
+              DANGER: Install the package in this order!
+          Thomas XXX
+          npm install selenium-webdriver --save
+          npm install selenium-standalone --save-dev
 
     * `npm install --global cucumber`
     * `npm install --global gulp-cli`
@@ -143,9 +146,6 @@ This document will show you how to:
         * `node --version`
         * `npm --version`
         * `gulp --version`
-
-
-
 3. Update all npm packages and webdriver
     * Console command either:
         * (cygwin only) `npm run cygwin-update`
@@ -155,6 +155,10 @@ This document will show you how to:
         * Get the list of all the npm configuration: `npm config list`
         * Get the registry (should be https://registry.npmjs.org/): `npm config get registry`
         * Set the registry correctly: `npm set registry "https://registry.npmjs.org/"`
+
+
+
+
 4. Test eslint
     * Console command either:
         * (cygwin only) `npm run cygwin-eslint`
@@ -325,5 +329,6 @@ MAYBE THIS CAN HELP:
 
 * Others:
 
+    * [npm module trends](http://www.npmtrends.com)
     * [Reasons to install some packages globally on Windows](https://github.com/eslint/eslint/issues/1238)
-    * [Reasons not to define Seleniumaddress](http://stackoverflow.com/questions/39353859/selenium-webdriver-exits-with-error-code-135)
+    * [Reasons not to define Selenium address](http://stackoverflow.com/questions/39353859/selenium-webdriver-exits-with-error-code-135)
