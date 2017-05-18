@@ -64,7 +64,7 @@ This document will show you how to:
           4. install the following packages globally (because of Windows)
 
               DANGER: Install the package in this order!
-          Thomas XXX
+Thomas XXX
           npm install selenium-webdriver --save
           npm install selenium-standalone --save-dev
 
@@ -155,28 +155,32 @@ This document will show you how to:
         * Get the list of all the npm configuration: `npm config list`
         * Get the registry (should be https://registry.npmjs.org/): `npm config get registry`
         * Set the registry correctly: `npm set registry "https://registry.npmjs.org/"`
-
-
-
-
-4. Test eslint
-    * Console command either:
-        * (cygwin only) `npm run cygwin-eslint`
-        * (windows only) `npm run win-eslint`
-    * Result: N/A
-5. Test gulp
+4. Test gulp
     * Console command either:
         * `npm run test-gulp`
         * `gulp test-gulp`
     * Result: Display on the console 'gulp is working'
-6. Test the default gulp
-    * Console command: `gulp`
-    * Result: Display on the console 'gulp-default1 is working' and 'gulp-default2 is working'
-7. Test Cucumber
+5. Test Cucumber
     * Console command either:
         * (cygwin only) `npm run cygwin-cucumber`
         * (windows only) `npm run win-cucumber`
     * Result: Display on the console 'cucumber is working'
+
+
+
+
+
+
+
+
+5. Test the default gulp
+    * Console command: `gulp`
+    * Result: Display on the console 'gulp-default1 is working' and 'gulp-default2 is working'
+6. Test eslint
+    * Console command either:
+        * (cygwin only) `npm run cygwin-eslint`
+        * (windows only) `npm run win-eslint`
+    * Result: N/A
 8. Test Chai:
     * Console command either:
         * (cygwin only) `npm run cygwin-chai`

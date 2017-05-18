@@ -5,7 +5,9 @@
   "description": "Javascript BDD on windows 10",
   "scripts": {
     "test-npm": "echo npm is working",
-    "version": "echo VERSION node: && node --version && echo VERSION npm: && npm --version && echo VERSION gulp: && gulp --version && echo VERSION Java: && java -version"
+    "version": "echo VERSION node: && node --version && echo VERSION npm: && npm --version && echo VERSION gulp: && gulp --version && echo VERSION Java: && java -version",
+    "test-gulp": "gulp test-gulp",
+    "test": "gulp test-cucumber"
   },
   "keywords": [
     "BDD",
@@ -20,13 +22,17 @@
   },
   "private": true,
   "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
     "cucumber": "^2.1.0",
     "firefox-profile": "^1.0.0",
     "gulp": "^3.9.1",
+    "gulp-protractor": "^4.1.0",
     "request": "^2.81.0",
     "selenium-webdriver": "^3.4.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "eslint": "^3.19.0",
