@@ -55,6 +55,34 @@ This document will show you how to:
 2. get the source code
     * install the package: git
     * `git clone <url>`
+
+## Checking the installation
+---
+
+1. Test npm
+    * Console command: `npm run test-npm`
+    * Result: Display on the console 'npm is working'
+2. Get the versions of everything we need:
+    * Console command: `npm run version`
+    * Result: This runs the following commands
+        * `node --version`
+        * `npm --version`
+3. Test gulp
+    * Console command: `npm run test-gulp`
+    * Result: Display on the console 'gulp is working'
+4. Test cucumber
+    * Console command: `npm run test-cucumber`
+
+
+
+
+Thomas XXX
+npm run test
+
+
+
+
+
 3. install and setup npm
     * install [npm](https://nodejs.org/en/download/)
     * All the dependencies are managed by npm
@@ -62,9 +90,7 @@ This document will show you how to:
         * update all required modules listed in the ./package.json file, run: `npm update`
               * For help: npm help [command]
           4. install the following packages globally (because of Windows)
-
               DANGER: Install the package in this order!
-Thomas XXX
           npm install selenium-webdriver --save
           npm install selenium-standalone --save-dev
 
@@ -137,15 +163,6 @@ Thomas XXX
 ## Checking the installation
 ---
 
-1. Test npm
-    * Console command: `npm run test-npm`
-    * Result: Display on the console 'npm is working'
-2. Get the versions of everything we need:
-    * Console command: `npm run version`
-    * Result: This runs the following commands
-        * `node --version`
-        * `npm --version`
-        * `gulp --version`
 3. Update all npm packages and webdriver
     * Console command either:
         * (cygwin only) `npm run cygwin-update`
@@ -155,11 +172,6 @@ Thomas XXX
         * Get the list of all the npm configuration: `npm config list`
         * Get the registry (should be https://registry.npmjs.org/): `npm config get registry`
         * Set the registry correctly: `npm set registry "https://registry.npmjs.org/"`
-4. Test gulp
-    * Console command either:
-        * `npm run test-gulp`
-        * `gulp test-gulp`
-    * Result: Display on the console 'gulp is working'
 5. Test Cucumber
     * Console command either:
         * (cygwin only) `npm run cygwin-cucumber`
