@@ -55,6 +55,24 @@ This document will show you how to:
 2. get the source code
     * install the package: git
     * `git clone <url>`
+3. install and setup npm
+    * install [npm](https://nodejs.org/en/download/)
+    * All the dependencies are managed by npm
+        * install all required modules listed in the ./package.json file, run: `npm install`
+        * update all required modules listed in the ./package.json file, run: `npm update`
+4. Check what packages were globally installed:
+
+    * `npm list -g --depth=0`
+
+    No package are installed globally.
+5. Check what packages were locally installed:
+
+    * `npm list --depth=0`
+
+    The following packages should be install locally with no error:
+
+    * cucumber@1.3.1 (Do not install version 2.0 as it doesn't work for Windows)
+    * npm
 
 ## Checking the installation
 ---
@@ -62,22 +80,78 @@ This document will show you how to:
 1. Test npm
     * Console command: `npm run test-npm`
     * Result: Display on the console 'npm is working'
-2. Get the versions of everything we need:
+2. Update the webdriver:
+    * Console command: `npm run webdriver-update`
+    * Result: Update the webdriver for Selenium
+3. Get the versions of everything we need:
     * Console command: `npm run version`
     * Result: This runs the following commands
         * `node --version`
         * `npm --version`
-3. Test gulp
+4. Test gulp
     * Console command: `npm run test-gulp`
     * Result: Display on the console 'gulp is working'
-4. Test cucumber
-    * Console command: `npm run test-cucumber`
+5. Test the default gulp
+    * Console command: `gulp`
+    * Result: Display on the console either 'gulp is working', or 'gulp-default1 is working' and 'gulp-default2 is working'
+6. Test cucumber
+    * Console command either:
+        * (cygwin only) `npm run cygwin-cucumber`
+        * (windows only) `npm run win-cucumber`
+    * Result: Display on the console 'cucumber is working'
+7. Test Chai
+    * Console command either:
+        * (cygwin only) `npm run cygwin-chai`
+        * (windows only) `npm run win-chai`
+    * Result: The test should pass
+8. Test eslint
+    * Console command either:
+        * (cygwin only) `npm run cygwin-eslint`
+        * (windows only) `npm run win-eslint`
+    * Result: N/A
+9. Update all npm packages and webdriver
+    * Console command either:
+        * (cygwin only) `npm run cygwin-update`
+        * (windows only) `npm run win-update`
+    * Result: update all npm packages, including global packages and the webdriver
+    * PS: If you get error "unregistered users are not allowed to access package ..."
+        * Get the list of all the npm configuration: `npm config list`
+        * Get the registry (should be https://registry.npmjs.org/): `npm config get registry`
+        * Set the registry correctly: `npm set registry "https://registry.npmjs.org/"`
 
 
 
 
 Thomas XXX
 npm run test
+
+
+
+10. Test the web drivers
+    * Select Start, search for "Edit the system environment variables"
+    * Select "Edit the system environment variables"
+    * Click on "Environment Variables"
+    * Edit "Path": Add "C:\Users\<username>\AppData\Roaming\npm;C:<folder>\bdd-javascript\vendor"
+    * Console command either:
+        * chromedriver.exe
+        * geckodriver.exe
+        * IEDriverServer.exe
+11. Test starting Selenium-webdriver:
+    * Console command either:
+        * (cygwin only) `npm run cygwin-webserver`
+        * (windows only) `npm run win-webserver`
+        * `gulp webdriver_standalone`
+    * Result: Webdriver manager (server) should be running
+    * To exit: Press any key
+    * Solution:
+        * If webdriver-manager start does not work, try to clear out the saved files: `webdriver-manager clean`
+        * If there are missing web driver (ex: IEDriverServer is not present), copy the files in ./node_modules/protractor/node_modules/webdriver-manager/selenium
+12. Test Selenium client (make sure step 10 is currently running):
+    * Console command either:
+        * (cygwin only) `npm run cygwin-webclient`
+        * (windows only) `npm run win-webclient`
+    * Result: Browser should open
+    * PS: Set the Internet Explorer Zoom to 100%
 
 
 
@@ -101,21 +175,6 @@ npm run test
         * `npm install --global eslint-plugin-jsx-a11y`
         * `npm install --global eslint-plugin-react`
             * `npm install --global eslint-config-airbnb`
-
-5. Check what packages were globally installed:
-
-    * `npm list -g --depth=0`
-
-    The following packages should be install globally with no error:
-
-    * cucumber@1.3.1
-    * eslint@3.6.0
-    * eslint-config-airbnb@12.0.0
-    * eslint-plugin-import@1.16.0
-    * eslint-plugin-jsx-a11y@2.2.2
-    * eslint-plugin-react@6.3.0
-    * gulp-cli@1.2.2
-    * npm
 
 6. Check what packages were locally installed:
 
@@ -149,6 +208,12 @@ npm run test
     * `protractor-cucumber-framework@0.6.0`
     * `request@2.75.0`
     * `selenium-webdriver@2.53.3`
+    * eslint@3.6.0
+    * eslint-config-airbnb@12.0.0
+    * eslint-plugin-import@1.16.0
+    * eslint-plugin-jsx-a11y@2.2.2
+    * eslint-plugin-react@6.3.0
+    * gulp-cli@1.2.2
 
 7. Get the latest web driver:
     * Download and copy in ./vendor from:
@@ -163,66 +228,6 @@ npm run test
 ## Checking the installation
 ---
 
-3. Update all npm packages and webdriver
-    * Console command either:
-        * (cygwin only) `npm run cygwin-update`
-        * (windows only) `npm run win-update`
-    * Result: update all npm packages, including global packages and the webdriver
-    * PS: If you get error "unregistered users are not allowed to access package ..."
-        * Get the list of all the npm configuration: `npm config list`
-        * Get the registry (should be https://registry.npmjs.org/): `npm config get registry`
-        * Set the registry correctly: `npm set registry "https://registry.npmjs.org/"`
-5. Test Cucumber
-    * Console command either:
-        * (cygwin only) `npm run cygwin-cucumber`
-        * (windows only) `npm run win-cucumber`
-    * Result: Display on the console 'cucumber is working'
-
-
-
-
-
-
-
-
-5. Test the default gulp
-    * Console command: `gulp`
-    * Result: Display on the console 'gulp-default1 is working' and 'gulp-default2 is working'
-6. Test eslint
-    * Console command either:
-        * (cygwin only) `npm run cygwin-eslint`
-        * (windows only) `npm run win-eslint`
-    * Result: N/A
-8. Test Chai:
-    * Console command either:
-        * (cygwin only) `npm run cygwin-chai`
-        * (windows only) `npm run win-chai`
-    * Result: The test should pass
-9. Test the web drivers
-    * Select Start, search for "Edit the system environment variables"
-    * Select "Edit the system environment variables"
-    * Click on "Environment Variables"
-    * Edit "Path": Add "C:\Users\<username>\AppData\Roaming\npm;C:<folder>\bdd-javascript\vendor"
-    * Console command either:
-        * chromedriver.exe
-        * geckodriver.exe
-        * IEDriverServer.exe
-10. Test starting Selenium-webdriver:
-    * Console command either:
-        * (cygwin only) `npm run cygwin-webserver`
-        * (windows only) `npm run win-webserver`
-        * `gulp webdriver_standalone`
-    * Result: Webdriver manager (server) should be running
-    * To exit: Press any key
-    * Solution:
-        * If webdriver-manager start does not work, try to clear out the saved files: `webdriver-manager clean`
-        * If there are missing web driver (ex: IEDriverServer is not present), copy the files in ./node_modules/protractor/node_modules/webdriver-manager/selenium
-11. Test Selenium client (make sure step 10 is currently running):
-    * Console command either:
-        * (cygwin only) `npm run cygwin-webclient`
-        * (windows only) `npm run win-webclient`
-    * Result: Browser should open
-    * PS: Set the Internet Explorer Zoom to 100%
 12. Test a page object (make sure step 10 is currently running):
     * Console command either:
         * (cygwin only) `npm run cygwin-webclientoo`

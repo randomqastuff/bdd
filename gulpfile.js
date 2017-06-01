@@ -1,5 +1,7 @@
 const dotenv	= require('dotenv');
 const gulp      = require('gulp');
+const gulpProtractor = require('gulp-protractor');
+const argv		= require('yargs').argv;
 
 // ======================================================
 // SETUP ENV FOR CUCUMBER
@@ -26,10 +28,50 @@ gulp.task('test-gulp', () => {
     console.log('gulp is working');
 });
 
+/*
+ // Testing if gulp is working
+ gulp.task('test-gulp', () => {
+ console.log('gulp is working');
+ });
+
+ // Testing if the default gulp is working
+ gulp.task('test-default1', () => {
+ console.log('gulp-default1 is working');
+ });
+ gulp.task('test-default2', () => {
+ console.log('gulp-default2 is working');
+ });
+ gulp.task('default', ['test-default1', 'test-default2']);
+ */
+
 // ======================================================
 // Testing Cucumber
 // ======================================================
 
-gulp.task('test-cucumber', () => {
-    console.log('cucumber is working');
+gulp.task('webdriver-update', gulpProtractor.webdriver_update);
+
+gulp.task('test1', () => {
+    console.log('default');
+    return gulp.src(['features/*'])
+        .pipe(gulpProtractor.protractor({
+                args: [
+                    '--verbose',
+                    '--baseUrl', 'http://www.google.com',
+                    '--cucumberOpts.tags', argv.tags || ''
+                ]
+            }))
+        .on('error', (e) => { throw e; });
+});
+
+gulp.task('default', () => {
+    console.log('default');
+    return gulp.src(['features/*'])
+        .pipe(gulpProtractor.protractor({
+            args: [
+                '--verbose',
+                '--baseUrl', 'http://www.google.com',
+                '--cucumberOpts.tags', argv.tags || ''
+            ]
+        }))
+        .on('error', (e) => { throw e; });
 });

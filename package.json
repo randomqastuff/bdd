@@ -5,9 +5,21 @@
   "description": "Javascript BDD on windows 10",
   "scripts": {
     "test-npm": "echo npm is working",
-    "version": "echo VERSION node: && node --version && echo VERSION npm: && npm --version && echo VERSION gulp: && gulp --version && echo VERSION Java: && java -version",
     "test-gulp": "gulp test-gulp",
-    "test": "gulp test-cucumber"
+    "version": "echo VERSION node: && node --version && echo VERSION npm: && npm --version && echo VERSION gulp: && gulp --version && echo VERSION Java: && java -version",
+    "webdriver-update": "gulp webdriver-update",
+    "cygwin-chai": "sh ./scripts/chai.sh || true",
+    "cygwin-cucumber": "sh ./scripts/cucumber.sh || true",
+    "cygwin-eslint": "sh ./scripts/eslint.sh || true",
+    "cygwin-update": "sh ./scripts/update.sh || true",
+    "cygwin-webclient": "sh ./scripts/webclient.sh || true",
+    "win-chai": ".\\scripts\\chai.bat",
+    "win-cucumber": ".\\scripts\\cucumber.bat",
+    "win-eslint": ".\\scripts\\eslint.bat",
+    "win-update": ".\\scripts\\update.bat",
+    "win-webclient": ".\\scripts\\webclient.bat",
+    "gulp": "gulp",
+    "test2": "./node_modules/.bin/cucumber.js features -r features/step_definitions"
   },
   "keywords": [
     "BDD",
@@ -24,19 +36,24 @@
   "dependencies": {
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
-    "cucumber": "^2.1.0",
+    "cucumber": "^1.3.0",
     "dotenv": "^4.0.0",
     "firefox-profile": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-protractor": "^4.1.0",
     "request": "^2.81.0",
-    "selenium-webdriver": "^3.4.0"
+    "selenium-webdriver": "^3.4.0",
+    "yargs": "^8.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
     "mocha": "^3.3.0",
     "mysql": "^2.13.0",
     "selenium-standalone": "^6.4.1"
