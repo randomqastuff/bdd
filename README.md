@@ -118,7 +118,8 @@ This document will show you how to:
         * Get the list of all the npm configuration: `npm config list`
         * Get the registry (should be https://registry.npmjs.org/): `npm config get registry`
         * Set the registry correctly: `npm set registry "https://registry.npmjs.org/"`
-
+    * PS: If you get error "npm WARN invalid config loglevel="notice""
+        * Solution N/A
 
 
 
