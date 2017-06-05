@@ -8,18 +8,19 @@
     "test-gulp": "gulp test-gulp",
     "version": "echo VERSION node: && node --version && echo VERSION npm: && npm --version && echo VERSION gulp: && gulp --version && echo VERSION Java: && java -version",
     "webdriver-update": "gulp webdriver-update",
-    "cygwin-chai": "sh ./scripts/chai.sh || true",
-    "cygwin-cucumber": "sh ./scripts/cucumber.sh || true",
-    "cygwin-eslint": "sh ./scripts/eslint.sh || true",
-    "cygwin-update": "sh ./scripts/update.sh || true",
-    "cygwin-webclient": "sh ./scripts/webclient.sh || true",
-    "win-chai": ".\\scripts\\chai.bat",
-    "win-cucumber": ".\\scripts\\cucumber.bat",
-    "win-eslint": ".\\scripts\\eslint.bat",
-    "win-update": ".\\scripts\\update.bat",
-    "win-webclient": ".\\scripts\\webclient.bat",
+    "cygwin-chai": "sh ./scripts/cygwin/chai.sh || true",
+    "cygwin-cucumber": "sh ./scripts/cygwin/cucumber.sh || true",
+    "cygwin-eslint": "sh ./scripts/cygwin/eslint.sh || true",
+    "cygwin-update": "sh ./scripts/cygwin/update.sh || true",
+    "cygwin-webclient": "sh ./scripts/cygwin/webclient.sh || true",
+    "win-chai": ".\\scripts\\win\\chai.bat",
+    "win-cucumber": ".\\scripts\\win\\cucumber.bat",
+    "win-eslint": ".\\scripts\\win\\eslint.bat",
+    "win-update": ".\\scripts\\win\\update.bat",
+    "win-webclient": ".\\scripts\\win\\webclient.bat",
+
     "gulp": "gulp",
-    "test2": "./node_modules/.bin/cucumber.js features -r features/step_definitions"
+    "test": "gulp test2"
   },
   "keywords": [
     "BDD",
@@ -54,7 +55,8 @@
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
-    "mocha": "^3.3.0",
+    "gulp-shell": "^0.6.3",
+    "mocha": "^3.4.2",
     "mysql": "^2.13.0",
     "selenium-standalone": "^6.4.1"
   }

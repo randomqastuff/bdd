@@ -1,18 +1,8 @@
 const dotenv	= require('dotenv');
 const gulp      = require('gulp');
 const gulpProtractor = require('gulp-protractor');
+const shell     = require('gulp-shell')
 const argv		= require('yargs').argv;
-
-// ======================================================
-// SETUP ENV FOR CUCUMBER
-// ======================================================
-
-gulp.task('set-env', (done) => {
-    if (process.env.NODE_ENV) {
-        dotenv.config({ path: `./env/${process.env.NODE_ENV}.env` });
-    }
-    done();
-});
 
 // ======================================================
 // Testing Gulp
@@ -45,21 +35,53 @@ gulp.task('test-gulp', () => {
  */
 
 // ======================================================
-// Testing Cucumber
+// BDD
+// ======================================================
+
+gulp.task('run-bdd', () => {
+    return gulp.src(['./features/*.js'])
+        .pipe(gulpProtractor.protractor({
+            configFile: './env/protractor.config.js',
+            args: [
+                '--verbose',
+                '--baseUrl',
+                'http://127.0.0.1:4444/wd/hub',
+                '--cucumberOpts.tags', '@test-object'
+            ]
+        }))
+        .on('error', (e) => {
+            console.log(`===== ERROR: ${e} =====`);
+            throw e;
+        });
+});
+
+// ======================================================
+// OTHERS
 // ======================================================
 
 gulp.task('webdriver-update', gulpProtractor.webdriver_update);
+
+// ======================================================
+// TMP
+// ======================================================
+
+gulp.task('set-env', (done) => {
+    if (process.env.NODE_ENV) {
+        dotenv.config({ path: `./env/${process.env.NODE_ENV}.env` });
+    }
+    done();
+});
 
 gulp.task('test1', () => {
     console.log('default');
     return gulp.src(['features/*'])
         .pipe(gulpProtractor.protractor({
-                args: [
-                    '--verbose',
-                    '--baseUrl', 'http://www.google.com',
-                    '--cucumberOpts.tags', argv.tags || ''
-                ]
-            }))
+            args: [
+                '--verbose',
+                '--baseUrl', 'http://www.google.com',
+                '--cucumberOpts.tags', argv.tags || ''
+            ]
+        }))
         .on('error', (e) => { throw e; });
 });
 
@@ -75,3 +97,18 @@ gulp.task('default', () => {
         }))
         .on('error', (e) => { throw e; });
 });
+
+//gulp.task('test', shell.task([
+//    ./node_modules/.bin/cucumber.js --tags @test-cucumber
+//    'echo hello'
+//]));
+
+gulp.task('test2', shell.task([
+    //'echo test:',
+    //'sh ./node_modules/.bin/cucumber.js --tags @test-cucumber'
+    //'echo(os.type()); // "Windows_NT"',
+    //'echo(os.release()); // "10.0.14393"',
+    //'echo(os.platform()); // "win32"'
+    t = "test",
+    'dir'
+]))

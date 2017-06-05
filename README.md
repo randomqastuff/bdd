@@ -128,7 +128,7 @@ npm run test
 
 
 
-10. Test the web drivers
+10. Test the web dgrivers
     * Select Start, search for "Edit the system environment variables"
     * Select "Edit the system environment variables"
     * Click on "Environment Variables"
