@@ -6,20 +6,20 @@
   "scripts": {
     "test-npm": "echo npm is working",
     "test-gulp": "gulp test-gulp",
+    "cucumber": "gulp cucumber",
+    "gulp": "gulp",
     "version": "echo VERSION node: && node --version && echo VERSION npm: && npm --version && echo VERSION gulp: && gulp --version && echo VERSION Java: && java -version",
     "webdriver-update": "gulp webdriver-update",
     "cygwin-chai": "sh ./scripts/cygwin/chai.sh || true",
     "cygwin-cucumber": "sh ./scripts/cygwin/cucumber.sh || true",
     "cygwin-eslint": "sh ./scripts/cygwin/eslint.sh || true",
     "cygwin-update": "sh ./scripts/cygwin/update.sh || true",
-    "cygwin-webclient": "sh ./scripts/cygwin/webclient.sh || true",
     "win-chai": ".\\scripts\\win\\chai.bat",
     "win-cucumber": ".\\scripts\\win\\cucumber.bat",
     "win-eslint": ".\\scripts\\win\\eslint.bat",
     "win-update": ".\\scripts\\win\\update.bat",
+    "cygwin-webclient": "sh ./scripts/cygwin/webclient.sh || true",
     "win-webclient": ".\\scripts\\win\\webclient.bat",
-
-    "gulp": "gulp",
     "test": "gulp test2"
   },
   "keywords": [
@@ -41,7 +41,6 @@
     "dotenv": "^4.0.0",
     "firefox-profile": "^1.0.0",
     "gulp": "^3.9.1",
-    "gulp-protractor": "^4.1.0",
     "request": "^2.81.0",
     "selenium-webdriver": "^3.4.0",
     "yargs": "^8.0.1"
@@ -55,6 +54,8 @@
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
+    "gulp-cucumber": "0.0.22",
+    "gulp-protractor": "^4.1.0",
     "gulp-shell": "^0.6.3",
     "mocha": "^3.4.2",
     "mysql": "^2.13.0",

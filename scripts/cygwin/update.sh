@@ -13,9 +13,10 @@ sed -i 's/\r$//' *.sh &&
     echo 3--------------------------- &&
 	npm install &&
     echo 4--------------------------- &&
-    cp -n ./vendor/*.* ./node_modules/protractor/node_modules/webdriver-manager/selenium &&
-	gulp webdriver-update &&
-    echo 5--------------------------- &&
 	./node_modules/.bin/selenium-standalone install &&
+	./node_modules/.bin/gulp webdriver-update &&
+    echo 5--------------------------- &&
+    #cp -n ./vendor/*.* ./node_modules/protractor/node_modules/webdriver-manager/selenium &&
+    cp -n ./node_modules/protractor/node_modules/webdriver-manager/selenium/*.* ./vendor &&
     echo 6--------------------------- &&
 	npm cache verify

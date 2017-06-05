@@ -92,7 +92,7 @@ This document will show you how to:
     * Console command: `npm run test-gulp`
     * Result: Display on the console 'gulp is working'
 5. Test the default gulp
-    * Console command: `gulp`
+    * Console command: `npm run gulp`
     * Result: Display on the console either 'gulp is working', or 'gulp-default1 is working' and 'gulp-default2 is working'
 6. Test cucumber
     * Console command either:
@@ -104,12 +104,14 @@ This document will show you how to:
         * (cygwin only) `npm run cygwin-chai`
         * (windows only) `npm run win-chai`
     * Result: The test should pass
-8. Test eslint
+8. Test cucumber and chai
+    * Console command: `npm run cucumber`
+9. Test eslint
     * Console command either:
         * (cygwin only) `npm run cygwin-eslint`
         * (windows only) `npm run win-eslint`
     * Result: N/A
-9. Update all npm packages and webdriver
+10. Update all npm packages and webdriver
     * Console command either:
         * (cygwin only) `npm run cygwin-update`
         * (windows only) `npm run win-update`
@@ -128,7 +130,7 @@ npm run test
 
 
 
-10. Test the web dgrivers
+10. Test the web drivers
     * Select Start, search for "Edit the system environment variables"
     * Select "Edit the system environment variables"
     * Click on "Environment Variables"
