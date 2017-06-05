@@ -105,13 +105,15 @@ This document will show you how to:
         * (windows only) `npm run win-chai`
     * Result: The test should pass
 8. Test cucumber and chai
-    * Console command: `npm run cucumber`
-9. Test eslint
+    * Console command: `npm run test-cucumber`
+9. Test shell command
+    * Console command: `npm run test-shell`
+10. Test eslint
     * Console command either:
         * (cygwin only) `npm run cygwin-eslint`
         * (windows only) `npm run win-eslint`
     * Result: N/A
-10. Update all npm packages and webdriver
+11. Update all npm packages and webdriver
     * Console command either:
         * (cygwin only) `npm run cygwin-update`
         * (windows only) `npm run win-update`

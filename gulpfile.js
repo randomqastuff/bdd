@@ -1,10 +1,10 @@
 const gulp      = require('gulp');
 const cucumber  = require('gulp-cucumber');
+const protractor = require('gulp-protractor');
+const shell     = require('gulp-shell')
 const argv		= require('yargs').argv;
 
 const dotenv	= require('dotenv');
-const gulpProtractor = require('gulp-protractor');
-const shell     = require('gulp-shell')
 
 // ======================================================
 // DEFAULT
@@ -20,7 +20,7 @@ gulp.task('test-default2', () => {
 gulp.task('default', ['test-default1', 'test-default2']);
 
 // ======================================================
-// Testing Gulp
+// Testing the installation
 // ======================================================
 
 // Basic test with no ES6
@@ -33,14 +33,9 @@ gulp.task('test-gulp', () => {
     console.log('gulp is working');
 });
 
-// ======================================================
-// OTHERS
-// ======================================================
-
-gulp.task('webdriver-update', gulpProtractor.webdriver_update);
 
 // Usage: command> npm run cucumber -- --tags=@test-chai
-gulp.task('cucumber', () => {
+gulp.task('test-cucumber', () => {
     return gulp.src('features/*').pipe(cucumber({
         'steps': 'features/steps_definitions/*.js',
         'format': 'summary',
@@ -49,13 +44,25 @@ gulp.task('cucumber', () => {
     }));
 });
 
+gulp.task('test-shell', shell.task([
+    // Call the shell command
+    'echo hello world'
+]));
+
+// ======================================================
+// OTHERS
+// ======================================================
+
+gulp.task('webdriver-update', protractor.webdriver_update);
+
+
+
 
 
 
 // ======================================================
 // TMP - FOR TESTING PURPOSE
 // ======================================================
-
 
 /*
  // ======================================================
@@ -82,10 +89,6 @@ gulp.task('cucumber', () => {
  // ======================================================
  // TMP
  // ======================================================
-
- // npm run test -- --ships=4
- gulp.task('test2', () => {
- });
 
  gulp.task('set-env', (done) => {
  if (process.env.NODE_ENV) {
@@ -119,19 +122,4 @@ gulp.task('cucumber', () => {
  }))
  .on('error', (e) => { throw e; });
  });
-
- //gulp.task('test', shell.task([
- //    ./node_modules/.bin/cucumber.js --tags @test-cucumber
- //    'echo hello'
- //]));
-
- gulp.task('test2', shell.task([
- //'echo test:',
- //'sh ./node_modules/.bin/cucumber.js --tags @test-cucumber'
- //'echo(os.type()); // "Windows_NT"',
- //'echo(os.release()); // "10.0.14393"',
- //'echo(os.platform()); // "win32"'
- t = "test",
- 'dir'
- ]))
- */
+*/

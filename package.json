@@ -4,9 +4,10 @@
   "email": "thomas.ejob@gmail.com",
   "description": "Javascript BDD on windows 10",
   "scripts": {
-    "test-npm": "echo npm is working",
+    "test-cucumber": "gulp test-cucumber",
     "test-gulp": "gulp test-gulp",
-    "cucumber": "gulp cucumber",
+    "test-npm": "echo npm is working",
+    "test-shell": "gulp test-shell",
     "gulp": "gulp",
     "version": "echo VERSION node: && node --version && echo VERSION npm: && npm --version && echo VERSION gulp: && gulp --version && echo VERSION Java: && java -version",
     "webdriver-update": "gulp webdriver-update",
@@ -18,9 +19,9 @@
     "win-cucumber": ".\\scripts\\win\\cucumber.bat",
     "win-eslint": ".\\scripts\\win\\eslint.bat",
     "win-update": ".\\scripts\\win\\update.bat",
+    "test": "gulp test2",
     "cygwin-webclient": "sh ./scripts/cygwin/webclient.sh || true",
-    "win-webclient": ".\\scripts\\win\\webclient.bat",
-    "test": "gulp test2"
+    "win-webclient": ".\\scripts\\win\\webclient.bat"
   },
   "keywords": [
     "BDD",
