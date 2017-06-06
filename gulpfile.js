@@ -50,6 +50,10 @@ gulp.task('test-shell', shell.task([
 ]));
 
 // ======================================================
+// BDD
+// ======================================================
+
+// ======================================================
 // OTHERS
 // ======================================================
 
@@ -64,29 +68,42 @@ gulp.task('webdriver-update', protractor.webdriver_update);
 // TMP - FOR TESTING PURPOSE
 // ======================================================
 
+gulp.task('test', () => {
+    return gulp.src(['./features/*.js'])
+        .pipe(protractor.protractor({
+            configFile: './env/protractor.config.js',
+            args: [
+                '--verbose',
+                '--baseUrl',
+                'http://127.0.0.1:4444/wd/hub',
+                '--cucumberOpts.tags', '@test-chai'
+            ]
+        }))
+        .on('error', (e) => {
+            console.log(`===== ERROR: ${e} =====`);
+            throw e;
+        });
+});
+
+
+//gulp.task('run-bdd', () => {
+//    return gulp.src(['./features/*.js'])
+//        .pipe(protractor.protractor({
+//            configFile: './env/protractor.config.js',
+//            args: [
+//                '--verbose',
+//                '--baseUrl',
+//                'http://127.0.0.1:4444/wd/hub',
+//                '--cucumberOpts.tags', '@test-object'
+//            ]
+//        }))
+//        .on('error', (e) => {
+//            console.log(`===== ERROR: ${e} =====`);
+//            throw e;
+//        });
+//});
 
 /*
- // ======================================================
- // BDD
- // ======================================================
-
- gulp.task('run-bdd', () => {
- return gulp.src(['./features/*.js'])
- .pipe(protractor.protractor({
- configFile: './env/protractor.config.js',
- args: [
- '--verbose',
- '--baseUrl',
- 'http://127.0.0.1:4444/wd/hub',
- '--cucumberOpts.tags', '@test-object'
- ]
- }))
- .on('error', (e) => {
- console.log(`===== ERROR: ${e} =====`);
- throw e;
- });
- });
-
  // ======================================================
  // TMP
  // ======================================================

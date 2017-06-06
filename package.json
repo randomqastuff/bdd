@@ -19,9 +19,9 @@
     "win-cucumber": ".\\scripts\\win\\cucumber.bat",
     "win-eslint": ".\\scripts\\win\\eslint.bat",
     "win-update": ".\\scripts\\win\\update.bat",
-    "test": "gulp test2",
     "cygwin-webclient": "sh ./scripts/cygwin/webclient.sh || true",
-    "win-webclient": ".\\scripts\\win\\webclient.bat"
+    "win-webclient": ".\\scripts\\win\\webclient.bat",
+    "test": "gulp test"
   },
   "keywords": [
     "BDD",
@@ -60,6 +60,7 @@
     "gulp-shell": "^0.6.3",
     "mocha": "^3.4.2",
     "mysql": "^2.13.0",
+    "protractor-cucumber-framework": "^3.1.1",
     "selenium-standalone": "^6.4.1"
   }
 }
