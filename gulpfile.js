@@ -64,6 +64,7 @@ gulp.task('webdriver-update', protractor.webdriver_update);
 // TMP - FOR TESTING PURPOSE
 // ======================================================
 
+
 /*
  // ======================================================
  // BDD
@@ -71,7 +72,7 @@ gulp.task('webdriver-update', protractor.webdriver_update);
 
  gulp.task('run-bdd', () => {
  return gulp.src(['./features/*.js'])
- .pipe(gulpProtractor.protractor({
+ .pipe(protractor.protractor({
  configFile: './env/protractor.config.js',
  args: [
  '--verbose',
@@ -97,23 +98,10 @@ gulp.task('webdriver-update', protractor.webdriver_update);
  done();
  });
 
- gulp.task('test1', () => {
- console.log('default');
- return gulp.src(['features/*'])
- .pipe(gulpProtractor.protractor({
- args: [
- '--verbose',
- '--baseUrl', 'http://www.google.com',
- '--cucumberOpts.tags', argv.tags || ''
- ]
- }))
- .on('error', (e) => { throw e; });
- });
-
  gulp.task('default', () => {
  console.log('default');
  return gulp.src(['features/*'])
- .pipe(gulpProtractor.protractor({
+ .pipe(protractor.protractor({
  args: [
  '--verbose',
  '--baseUrl', 'http://www.google.com',
