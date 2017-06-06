@@ -60,21 +60,35 @@ This document will show you how to:
     * All the dependencies are managed by npm
         * install all required modules listed in the ./package.json file, run: `npm install`
         * update all required modules listed in the ./package.json file, run: `npm update`
-4. Check what packages were globally installed:
-
-    * `npm list -g --depth=0`
-
-    No package are installed globally.
-5. Check what packages were locally installed:
-
-    * `npm list --depth=0`
-
+4. Check which packages were globally installed: `npm list -g --depth=0`
+    Result: No package are installed globally.
+5. Check which packages were locally installed: `npm list --depth=0`
     The following packages should be install locally with no error:
 
-    * cucumber@1.3.1 (Do not install version 2.0 as it doesn't work for Windows)
-    * npm
+    * babel-cli@6.24.1
+    * babel-plugin-transform-es2015-modules-commonjs@6.24.1
+    * babel-preset-es2015@6.24.1
+    * chai@3.5.0
+    * chai-as-promised@6.0.0
+    * cucumber@1.3.3 (Do not install version 2.0 as it doesn't work for Windows)
+    * dotenv@4.0.0
+    * eslint@3.19.0
+    * eslint-config-airbnb@15.0.1
+    * eslint-plugin-import@2.3.0
+    * eslint-plugin-jsx-a11y@5.0.3
+    * eslint-plugin-react@7.0.1
+    * firefox-profile@1.0.0
+    * gulp@3.9.1
+    * gulp-cucumber@0.0.22
+    * gulp-protractor@4.1.0
+    * gulp-shell@0.6.3
+    * mocha@3.4.2
+    * mysql@2.13.0
+    * request@2.81.0
+    * selenium-standalone@6.4.1
+    * selenium-webdriver@3.4.0
+    * yargs@8.0.1
 
-## Checking the installation
 ---
 
 1. Test npm

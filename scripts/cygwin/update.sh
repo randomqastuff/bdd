@@ -6,17 +6,16 @@ echo ==================== &&
 
 sed -i 's/\r$//' *.sh &&
 	npm install npm@latest -g &&
-    echo 1--------------------------- &&
 	npm update -g &&
-    echo 2--------------------------- &&
-	rm -r node_modules || true &&
-    echo 3--------------------------- &&
+    echo 1--------------------------- &&
+#	rm -r node_modules || true &&
 	npm install &&
-    echo 4--------------------------- &&
+	npm prune &&
+    echo 2--------------------------- &&
 	./node_modules/.bin/selenium-standalone install &&
 	./node_modules/.bin/gulp webdriver-update &&
-    echo 5--------------------------- &&
+    echo 4--------------------------- &&
     #cp -n ./vendor/*.* ./node_modules/protractor/node_modules/webdriver-manager/selenium &&
     cp -n ./node_modules/protractor/node_modules/webdriver-manager/selenium/*.* ./vendor &&
-    echo 6--------------------------- &&
+    echo 5--------------------------- &&
 	npm cache verify
