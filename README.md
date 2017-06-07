@@ -143,7 +143,7 @@ This document will show you how to:
 
 Thomas XXX
 npm run test
-
+cd D:\save\thomas\job\computer\Javascript\code\bdd
 
 
 10. Test the web drivers

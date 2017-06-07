@@ -1,0 +1,11 @@
+Feature: Making sure everything is working
+
+  [36m@test-chai[39m
+  Scenario: Testing chai, and chai as expected
+  [32m√ Given the calculator is cleared[39m
+  [32m√ When I add "2" and "3"[39m
+  [32m√ Then the result should be "5"[39m
+
+1 scenario ([32m1 passed[39m)
+3 steps ([32m3 passed[39m)
+0m00.003s

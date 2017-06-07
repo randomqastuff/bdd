@@ -75,6 +75,7 @@ gulp.task('test', () => {
             args: [
                 '--verbose',
                 '--baseUrl',
+                '--disableChecks',      // To ignore unknown extra flags: cucumberOpts
                 'http://127.0.0.1:4444/wd/hub',
                 '--cucumberOpts.tags', '@test-chai'
             ]
