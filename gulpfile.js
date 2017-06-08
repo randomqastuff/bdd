@@ -85,6 +85,7 @@ gulp.task('test', () => {
             throw e;
         });
 });
+gulp.task('test2', protractor.webdriver_start);
 
 
 //gulp.task('run-bdd', () => {

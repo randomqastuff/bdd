@@ -1,0 +1,66 @@
+[
+  {
+    "elements": [
+      {
+        "id": "making-sure-everything-is-working;testing-chai,-and-chai-as-expected",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Testing chai, and chai as expected",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "the calculator is cleared",
+            "result": {
+              "status": "passed",
+              "duration": 349235
+            },
+            "line": 3,
+            "match": {
+              "location": "D:/save/thomas/job/computer/Javascript/code/bdd/features/step_definitions/test_steps.js:13"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I add \"2\" and \"3\"",
+            "result": {
+              "status": "passed",
+              "duration": 180938
+            },
+            "line": 11,
+            "match": {
+              "location": "D:/save/thomas/job/computer/Javascript/code/bdd/features/step_definitions/test_steps.js:16"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "the result should be \"5\"",
+            "result": {
+              "status": "passed",
+              "duration": 824098
+            },
+            "line": 12,
+            "match": {
+              "location": "D:/save/thomas/job/computer/Javascript/code/bdd/features/step_definitions/test_steps.js:21"
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@test-chai",
+            "line": 9
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "making-sure-everything-is-working",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Making sure everything is working",
+    "tags": [],
+    "uri": "D:\\save\\thomas\\job\\computer\\Javascript\\code\\bdd\\features\\test-basic.feature"
+  }
+]

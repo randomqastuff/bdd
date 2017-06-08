@@ -1,17 +1,11 @@
 exports.config = {
   capabilities: {
-    browserName: 'chrome',
-    //browserName: 'firefox',
-    //"moz:firefoxOptions": {
-    //  "binary": "../vendor/geckodriver-v0.16.1.exe",
-    //},
-    //browserName: 'internet explorer',
+    //browserName: 'chrome',
+    browserName: 'firefox',
     maxInstances: 1
-
-    //'phantomjs.binary.path': './node_modules/karma-phantomjs-launcher/node_modules/phantomjs/bin/phantomjs',
-    //'phantomjs.cli.args': '--web-security=false --debug=true --webdriver --webdriver-logfile=webdriver.log --webdriver-loglevel=DEBUG',
   },
-  directConnect: true,
+  //directConnect: true //test script communicates directly Chrome Driver or Firefox Driver, bypassing any Selenium Server
+  seleniumAddress: 'http://localhost:4444/wd/hub',  // imply that => directConnect: false
   baseUrl: 'http://www.google.com',
 
   // Source: http://www.protractortest.org/#/tutorial
@@ -39,6 +33,8 @@ exports.config = {
     //format: 'summary',  // hide all cucumber steps
     //format: 'pretty',
 //    format: ['progress', 'pretty:output.txt'],
+
+    format: 'json:./reports/cucumber.json',
 
     // Cucumber tags to run, and to not run
     tags: ['~@skip', '~@wip', '~@SKIP', '~@WIP', '@test-selenium']

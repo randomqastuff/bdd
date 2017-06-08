@@ -61,7 +61,10 @@ This document will show you how to:
         * install all required modules listed in the ./package.json file, run: `npm install`
         * update all required modules listed in the ./package.json file, run: `npm update`
 4. Check which packages were globally installed: `npm list -g --depth=0`
-    Result: No package are installed globally.
+    The following packages should be install globally with no error:
+    * npm@5.0.3
+    * webdriver-manager@12.0.6
+
 5. Check which packages were locally installed: `npm list --depth=0`
     The following packages should be install locally with no error:
 
@@ -144,6 +147,13 @@ This document will show you how to:
 Thomas XXX
 npm run test
 cd D:\save\thomas\job\computer\Javascript\code\bdd
+TO DO:
+    make the browsers work: IE, firefox
+    Make the webpage appears without profile
+    Run cucumber test
+    Hooks.js
+    Run with Page object
+    Utilities
 
 
 10. Test the web drivers

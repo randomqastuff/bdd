@@ -21,7 +21,8 @@
     "win-update": ".\\scripts\\win\\update.bat",
     "cygwin-webclient": "sh ./scripts/cygwin/webclient.sh || true",
     "win-webclient": ".\\scripts\\win\\webclient.bat",
-    "test": "gulp test"
+    "test": "gulp test",
+    "test2": "gulp test2"
   },
   "keywords": [
     "BDD",
